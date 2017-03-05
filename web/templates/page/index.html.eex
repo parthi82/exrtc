@@ -1,12 +1,12 @@
 <img src="/images/elixir.png" style="width:250px;height:250px">
-<form action="/joinRoom">
+<form>
   <h1 style="color:rgb(119, 94, 137">ExRTC</h1>
   <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="roomName"
-     placeholder="Enter room name">
+    <input class="mdl-textfield__input" type="text" name="room"
+     placeholder="Enter a room name">
   </div>
-  <button class="mdl-button mdl-js-button mdl-button--raised
-  mdl-js-ripple-effect mdl-button--accent" style="background-color: rgb(119, 94, 137)">
+  <button type="submit" class="mdl-button mdl-js-button mdl-button--raised
+  mdl-button--accent" style="background-color: rgb(119, 94, 137)">
     JOIN
   </button>
 </form>
