@@ -1,4 +1,4 @@
-# Exrtc
+# ExRTC
 
 To start your Phoenix app:
 
