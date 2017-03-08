@@ -34,7 +34,15 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: ['env'],
+          "presets": [
+            ["env", {
+              "targets": {
+                "chrome": 54,
+                "opera": 42,
+                "firefox": 51
+              }
+            }]
+          ]
         },
       }
     ],
