@@ -1,5 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
+
 
 const debug = process.env.NODE_ENV !== 'production';
 const dir = dest => path.resolve(__dirname, dest);
@@ -11,17 +14,18 @@ if (!debug) {
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify('production') },
     }),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
+    new HtmlWebpackPlugin({ title: 'Tree-shaking' }),
     new webpack.optimize.UglifyJsPlugin({
       mangle: true, sourcemap: false, comments: false,
-    })
+    }),
+    new CompressionPlugin()
   );
 }
 
 module.exports = {
   context: __dirname,
-  devtool: debug ? 'inline-cheap-source-map' : null,
+  devtool: debug ? 'inline-cheap-source-map' : false,
   entry: './client/js/app.js',
   output: {
     path: './priv/static/js',
@@ -33,16 +37,8 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
-        query: {
-          "presets": [
-            ["env", {
-              "targets": {
-                "chrome": 54,
-                "opera": 42,
-                "firefox": 51
-              }
-            }]
-          ]
+        options: {
+          'presets': ['latest', 'react']
         },
       }
     ],
