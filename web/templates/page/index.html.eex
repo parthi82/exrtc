@@ -1,5 +1,5 @@
 <img src="/images/elixir.png" style="width:250px;height:250px">
-<form>
+<form action="/">
   <h1 style="color:rgb(119, 94, 137">ExRTC</h1>
   <div class="mdl-textfield mdl-js-textfield">
     <input class="mdl-textfield__input" type="text" name="room"

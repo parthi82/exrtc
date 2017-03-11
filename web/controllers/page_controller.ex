@@ -1,7 +1,11 @@
 defmodule Exrtc.PageController do
   use Exrtc.Web, :controller
-
-  def index(conn, _params) do
-    render conn, "index.html"
+  require Logger
+  def index(conn, params) do
+    case params do
+      %{"room" => room} ->
+        redirect conn, to: "/#{room}"
+      _ ->   render conn, "index.html"  
+    end
   end
 end
