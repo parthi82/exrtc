@@ -1,11 +1,8 @@
-const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CompressionPlugin = require("compression-webpack-plugin");
-
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const debug = process.env.NODE_ENV !== 'production';
-const dir = dest => path.resolve(__dirname, dest);
 
 const plugins = [];
 
@@ -26,10 +23,10 @@ if (!debug) {
 module.exports = {
   context: __dirname,
   devtool: debug ? 'inline-cheap-source-map' : false,
-  entry: './client/js/app.js',
+  entry: './client/js/app.jsx',
   output: {
     path: './priv/static/js',
-    filename: 'app.js'
+    filename: 'app.js',
   },
   module: {
     loaders: [
@@ -38,9 +35,9 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: {
-          'presets': ['latest', 'react']
+          presets: ['latest', 'react'],
         },
-      }
+      },
     ],
   },
   plugins,
