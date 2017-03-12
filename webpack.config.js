@@ -23,7 +23,7 @@ if (!debug) {
 module.exports = {
   context: __dirname,
   devtool: debug ? 'inline-cheap-source-map' : false,
-  entry: './client/js/app.jsx',
+  entry: './assets/js/app.jsx',
   output: {
     path: './priv/static/js',
     filename: 'app.js',

@@ -19,3 +19,4 @@ node_modules
 npm-debug.log
 yarn-error.log
 /priv/static/js
+.DS_store

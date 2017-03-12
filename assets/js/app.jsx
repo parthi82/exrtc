@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Loader from './components/Loader.jsx';
 
 ReactDOM.render(
-  <h1>ExRTC</h1>,
+  <Loader />,
   document.getElementById('root'),
 );

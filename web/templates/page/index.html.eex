@@ -6,7 +6,7 @@
      placeholder="Enter a room name">
   </div>
   <button type="submit" class="mdl-button mdl-js-button mdl-button--raised
-  mdl-button--accent" style="background-color: rgb(119, 94, 137)">
+  mdl-button--accent" style="background-color: #775e89">
     JOIN
   </button>
 </form>
