@@ -23,7 +23,7 @@ if (!debug) {
 module.exports = {
   context: __dirname,
   devtool: debug ? 'inline-cheap-source-map' : false,
-  entry: './assets/js/app.jsx',
+  entry: './assets/js/index.jsx',
   output: {
     path: './priv/static/js',
     filename: 'app.js',
@@ -35,7 +35,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: {
-          presets: ['latest', 'react'],
+          presets: ['latest', 'react', 'stage-2'],
         },
       },
     ],
